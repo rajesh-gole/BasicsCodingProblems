@@ -1,0 +1,37 @@
+#include <bits/stdc++.h>
+using namespace std;
+void duplicates(int a[],int n)
+{
+    // unordered_map to store frequencies
+
+    unordered_map<int,int> mp;
+    for(int i=0;i<n;i++)
+    {
+        mp[a[i]]++;
+    }
+    
+    //    iterating over all value of umap
+    int found=false;
+    unordered_map<int,int>:: iterator it;
+    for (it=mp.begin();it!=mp.end();it++)
+    {
+        if(it->second>1)   // second ->frequencies
+        {
+            cout<<it->first<<" ";  // first -> value, don't write it second
+            found=true;
+        }
+    }
+    if(found==false)
+        cout<<"No Duplicates";
+}
+int main() {
+	int a[]={12, 11, 40, 12, 5, 6, 5, 12, 11};
+	int n=sizeof(a)/sizeof(a[0]);
+	duplicates(a,n);
+}
+
+
+
+
+//Time Complexity: O(N)
+//Auxiliary Space: O(N)
