@@ -1,0 +1,56 @@
+// Method-1  T.C.= O(n^2)
+#include <bits/stdc++.h>
+using namespace std;
+void kth_smallLarge(int a[],int n,int sum)
+{
+    for(int i=0;i<n;i++)
+    {
+        for(int j=i+1;j<n;j++)
+        {
+            if((a[i]+a[j])==sum)
+                cout<<a[i]<<" "<<a[j]<<endl;
+        }
+    }
+}
+int main() {
+	int a[]={1, 5, 7, -1, 5 };
+	int n=sizeof(a)/sizeof(a[0]);
+	int sum=6;
+	kth_smallLarge(a,n,sum);
+}
+
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------
+/* 
+if ( m.find("f") == m.end() ) {
+  // not found
+} else {
+  // found
+}
+*/
+// Method-2 time complexity: O(c + n) where c is the count of pairs with a given sum.
+#include <bits/stdc++.h>
+using namespace std;
+void kth_smallLarge(int a[],int n,int sum)
+{
+    unordered_map<int,int> mp;
+    for(int i=0;i<n;i++)
+    {
+        int rem=sum-a[i];
+        if(mp.find(rem)!=mp.end()) // if rem is found in m
+        {
+            int count=mp[rem]; // count is for frequency in map element
+            for(int j=0;j<count;j++)
+            {
+                cout<<a[i]<<" "<<rem<<endl;
+            }
+        }
+        mp[a[i]]++;
+    }
+}
+int main() {
+	int a[]={1, 5, 7, -1, 5 };
+	int n=sizeof(a)/sizeof(a[0]);
+	int sum=6;
+	kth_smallLarge(a,n,sum);
+}
