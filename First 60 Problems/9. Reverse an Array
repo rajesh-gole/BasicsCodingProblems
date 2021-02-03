@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+void reverse(int a[],int n)
+{
+    int start=0;
+    int end=n-1;
+    while(start<end)
+    {
+        int temp=a[start];
+        a[start]=a[end];
+        a[end]=temp;
+        start++;end--;
+    }
+    for(int i=0;i<n;i++)
+        cout<<a[i]<<" ";
+}
+int main()
+{
+    int a[]={1,4,9,8,5,7, 2, 3 ,6};
+    int n=sizeof(a)/sizeof(int);
+    reverse(a,n);
+}
