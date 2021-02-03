@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+void r_duplicate(int a[],int n)
+{
+    sort(a,a+n); // Array must be sorted
+    int current = a[0];
+    bool found = false;
+    
+    for (int i = 0; i < n; i++) 
+    {
+        if (current == a[i] && !found) 
+            found = true;
+        else if (current != a[i]) {
+            cout<<current<<" ";
+        current = a[i];
+        found = false;
+    }
+}
+cout<<current<<" ";
+
+}
+int main()
+{
+    int a[]={1, 1, 3, 7, 7, 8, 9, 9, 9, 10,2,2,4,4,3};
+    int n=sizeof(a)/sizeof(int);
+    r_duplicate(a,n);
+}
