@@ -1,0 +1,67 @@
+// Method-1 : Swap
+
+#include<bits/stdc++.h>
+using namespace std;
+void Reverse(string& s)
+{
+    int n=s.size();
+    for(int i=0;i<n/2;i++)
+        swap(s[i],s[n-i-1]);
+}
+int main()
+{
+    string s="RajeshGole";
+    Reverse(s);
+    cout<<s;
+}
+
+// Method-2 : reverse
+
+#include<bits/stdc++.h>
+using namespace std;
+void Reverse(string s)
+{
+    
+    reverse(s.begin(),s.end());
+    cout<<s;
+}
+int main()
+{
+    string s="RajeshGole";
+    Reverse(s);
+    
+}
+
+// Method-3 : Reverse for loop
+
+#include<bits/stdc++.h>
+using namespace std;
+void Reverse(string s)
+{
+    
+    for(int i=s.length()-1;i>=0;i--)
+    cout<<s[i];
+}
+int main()
+{
+    string s="RajeshGole";
+    Reverse(s);
+    
+}
+
+// Method-4 : se of reverse iterators
+
+#include<bits/stdc++.h>
+using namespace std;
+void Reverse(string s)
+{
+    
+    string rev = string(s.rbegin(),s.rend());
+    cout<<rev;
+}
+int main()
+{
+    string s="RajeshGole";
+    Reverse(s);
+    
+}
