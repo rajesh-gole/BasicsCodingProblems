@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+typedef unsigned char BYTE;
+
+int main(void)
+{
+  BYTE byteArray[5] = { 0x48, 0x65, 0x6C, 0x6C, 0x6F };
+
+  // +1 for the NULL terminator
+  char str[sizeof(byteArray) + 1];
+  // Copy contents
+  memcpy(str, byteArray, sizeof(byteArray));
+  // Append NULL terminator
+  str[sizeof(byteArray)] = '\0';
+
+  printf("%s\n", str);    
+  return EXIT_SUCCESS;
+}
+
+//C strings are null terminated, 
+//so the size of the string will be the size of the array plus one, 
+//for the null terminator. Then you could use memcpy() to copy the string, 
