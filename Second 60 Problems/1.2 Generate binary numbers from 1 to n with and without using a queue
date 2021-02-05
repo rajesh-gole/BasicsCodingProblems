@@ -1,0 +1,51 @@
+// Method-1
+#include <iostream>
+using namespace std;
+void binary_number(int n)
+{
+int bin_num[1000];
+int i = 0;
+while (n > 0) {
+bin_num[i] = n % 2;
+n = n / 2;
+i++;
+}
+for (int j = i - 1; j >= 0; j--)
+cout << bin_num[j];
+cout << endl;
+}
+void binary_number_generation(int n)
+{
+for(int i = 0; i<= n; i++)
+{
+binary_number(i);
+}
+}
+int main()
+{
+binary_number_generation(10);
+}
+
+//------------------------------------------------------------------------
+//Method-2
+#include <bits/stdc++.h>
+using namespace std;
+void binary_numbers_using_queue(int n)
+{
+queue<string> queue1;
+queue1.push("1");
+while (n--)
+{
+string a = queue1.front();
+queue1.pop();
+cout << a << "\n";
+string b = a;
+queue1.push(a.append("0"));
+queue1.push(b.append("1"));
+}
+}
+int main()
+{
+binary_numbers_using_queue(10);
+return 0;
+}
