@@ -1,0 +1,14 @@
+#include<iostream>
+#include<math.h>
+#include<sstream>
+#include<string>
+using namespace std;
+int main()
+{
+int n=100;
+//stringstream ss;
+//ss<<tgamma(n + 1); 
+//string s=ss.str();
+string s=to_string(tgamma(n+1));
+cout<<s;
+}
