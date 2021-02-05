@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+void calculate(int a,int b,int c,int d)
+{
+int gcd;
+int x=(a*d)+(b*c); //numerator
+int y=b*d; //denominator
+// Trick part. Reduce it to the simplest form by using gcd.
+for(int i=1; i <= x && i <= y; ++i)
+{
+if(x%i==0 && y%i==0)
+gcd = i;
+}
+cout << "The added fraction is "<<x/gcd <<" "<<y/gcd;
+cout << endl;
+}
+int main()
+{
+calculate(1,2,3,2);
+return 0;
+}
